@@ -1,6 +1,7 @@
 import { OpenAPIHono, createRoute } from '@hono/zod-openapi';
 import { apiReference } from '@scalar/hono-api-reference';
 import { z } from 'zod';
+import { createAgentApp } from './modules/agent/agent';
 
 // Create OpenAPI Hono app
 const app = new OpenAPIHono();
@@ -142,6 +143,10 @@ app.openapi(createUserRoute, (c) => {
     201
   );
 });
+
+// Register agent routes
+const agentApp = createAgentApp();
+app.route('/agent', agentApp);
 
 // OpenAPI JSON endpoint
 app.doc('/openapi.json', {
