@@ -1,0 +1,25 @@
+{
+  "name": "health-agent-v1",
+  "version": "1.0.0",
+  "description": "Restructure health agent with Langchain V1 for improved reliability, security, and efficiency",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hono": "^4.6.0",
+    "@hono/zod-openapi": "^0.19.9",
+    "@scalar/hono-api-reference": "^0.9.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.5.0"
+  }
+}
+
