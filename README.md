@@ -1,15 +1,15 @@
 # Health Agent v1
 
-A project to migrate the health agent from LangGraph v0 to LangGraph v1. Restructured health agent built with TypeScript and LangGraph v1, featuring improved reliability, security, and efficiency. Provides diagnosis, symptom classification, and action recommendations with structured outputs, strict validation, guardrails, and optimized performance.
+A personal project demonstrating code examples for migrating a health agent from LangGraph v0 to LangGraph v1. This is a reference implementation built with TypeScript and LangGraph v1, showcasing how to restructure a health agent with improved reliability, security, and efficiency. The original health agent v0 was a client project.
 
 ## 📋 Project Background
 
-This project aims to migrate the health agent originally built with LangGraph v0 to LangGraph v1. Through this migration, we can:
+This is a personal project that provides code examples for migrating from LangGraph v0 to LangGraph v1. The original health agent v0 was built as a client project. This reference implementation demonstrates:
 
-- Leverage new features and improvements in LangGraph v1
-- Enhance system reliability and security
-- Optimize performance
-- Adopt a modular workflow architecture
+- How to leverage new features and improvements in LangGraph v1
+- Migration patterns for enhancing system reliability and security
+- Performance optimization techniques
+- Modular workflow architecture patterns
 
 ## 🛠️ Tech Stack
 
@@ -102,12 +102,14 @@ The project uses LangGraph v1's `StateGraph` to build the health agent workflow:
 
 ## 🔄 Migration Notes
 
-This project migrates from LangGraph v0 to v1, with major changes including:
+This project demonstrates the migration from LangGraph v0 to v1, with major changes including:
 
 1. **State Definition**: Uses new Zod-based state definition approach
 2. **Graph Construction**: Uses `StateGraph` and `Annotation` API
 3. **Checkpointing**: Uses new checkpoint system
 4. **Type Safety**: Improved TypeScript type support
+
+> **Note**: This is a personal reference project providing code examples. The original health agent v0 was a client project.
 
 ## 📝 Development Guide
 
@@ -134,6 +136,6 @@ The project currently supports configuration through environment variables:
 
 ISC
 
-## 🤝 Contributing
+## 📌 Note
 
-Issues and Pull Requests are welcome!
+This is a personal project providing code examples for reference. The original health agent v0 was a client project.
