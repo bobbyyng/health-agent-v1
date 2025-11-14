@@ -1,7 +1,9 @@
 import { getChatProvider } from "../../common/utils/chat-provider.util";
 import { HumanMessage } from "@langchain/core/messages";
 import { basicGraph } from "../../common/workflow/graph/basic.graph";
+import { MemorySaver } from "@langchain/langgraph";
 
+const checkpointer = new MemorySaver();
 /**
  * Agent chat route handler
  * @param c - Hono context with validated request data
@@ -15,8 +17,12 @@ export async function agentChatHandler(c: any) {
       modelName,
     });
 
-    const result = await basicGraph.invoke({
+    const result = await basicGraph(checkpointer).invoke({
       messages: [new HumanMessage(message)],
+    }, {
+      configurable: {
+        thread_id: "123",
+      },
     });
 
     return c.json(result);
