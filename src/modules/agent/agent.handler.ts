@@ -1,5 +1,6 @@
 import { getChatProvider } from "../../common/utils/chat-provider.util";
 import { HumanMessage } from "@langchain/core/messages";
+import { basicGraph } from "../../common/workflow/graph/basic.graph";
 
 /**
  * Agent chat route handler
@@ -14,7 +15,9 @@ export async function agentChatHandler(c: any) {
       modelName,
     });
 
-    const result = await modelProvider.invoke([new HumanMessage(message)]);
+    const result = await basicGraph.invoke({
+      messages: [new HumanMessage(message)],
+    });
 
     return c.json(result);
   } catch (error) {
