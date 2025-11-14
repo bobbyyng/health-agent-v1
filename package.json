@@ -8,7 +8,17 @@
     "dev": "bun --watch src/index.ts",
     "start": "bun src/index.ts"
   },
-  "keywords": [],
+  "keywords": [
+    "langchain",
+    "langgraph",
+    "typescript",
+    "ai",
+    "llm",
+    "hono",
+    "bun",
+    "openapi",
+    "zod"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
