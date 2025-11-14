@@ -8,6 +8,16 @@
     "dev": "bun --watch src/index.ts",
     "start": "bun src/index.ts"
   },
+  "topics": [
+    "langchain",
+    "langgraph",
+    "typescript",
+    "ai",
+    "llm",
+    "hono",
+    "bun",
+    "openapi"
+  ],
   "keywords": [
     "langchain",
     "langgraph",
