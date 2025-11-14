@@ -10,7 +10,7 @@ export function getChatProvider({
 }: {
   provider: ChatProvider;
   modelName: string;
-}): ChatOpenAI {
+}) {
   switch (provider) {
     case ChatProvider.QWEN:
       return createQwenChatProvider({
@@ -20,7 +20,6 @@ export function getChatProvider({
 }
 
 function createQwenChatProvider({ modelName }: { modelName: string }) {
-  console.log('Creating Qwen chat provider with model:', modelName);
   return new ChatOpenAI({
     apiKey: process.env.AI_PROVIDER_ALIBABA_API_KEY,
     configuration: {

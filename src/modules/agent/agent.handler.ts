@@ -1,4 +1,3 @@
-import { getChatProvider } from "../../common/utils/chat-provider.util";
 import { HumanMessage } from "@langchain/core/messages";
 import { basicGraph } from "../../common/workflow/graph/basic.graph";
 import { MemorySaver } from "@langchain/langgraph";
@@ -12,18 +11,16 @@ export async function agentChatHandler(c: any) {
   try {
     const { message, provider, modelName } = c.req.valid("json");
 
-    const modelProvider = getChatProvider({
-      provider,
-      modelName,
-    });
-
-    const result = await basicGraph(checkpointer).invoke({
-      messages: [new HumanMessage(message)],
-    }, {
-      configurable: {
-        thread_id: "123",
+    const result = await basicGraph(checkpointer).invoke(
+      {
+        messages: [new HumanMessage(message)],
       },
-    });
+      {
+        configurable: {
+          thread_id: crypto.randomUUID(),
+        },
+      }
+    );
 
     return c.json(result);
   } catch (error) {
