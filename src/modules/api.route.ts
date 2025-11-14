@@ -13,10 +13,21 @@ export const healthRoute = createRoute({
     200: {
       content: {
         'application/json': {
-          schema: z.object({
-            status: z.string(),
-            timestamp: z.string(),
-          }),
+          schema: z
+            .object({
+              status: z.string().openapi({
+                description: 'Status of the API',
+                example: 'ok',
+              }),
+              timestamp: z.string().openapi({
+                description: 'Current timestamp',
+                example: '2024-01-01T00:00:00.000Z',
+              }),
+            })
+            .openapi({
+              type: 'object',
+              description: 'Health check response',
+            }),
         },
       },
       description: 'Health status',
